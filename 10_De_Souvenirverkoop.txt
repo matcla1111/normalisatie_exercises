@@ -1,0 +1,14 @@
+#UNF
+DB(Verkoper, plaats, Datum, Artikel, Prijs, Hoeveelheid)
+
+#1NF
+DB(Verkoper(key), plaats, Datum, Artikel(key), Prijs, Hoeveelheid)
+
+#2NF
+Verkoper(VerkoperID(PK), Verkoper, plaats, Datum)
+Artikel(ArtikelID(PK), Artikel, Prijs, Hoeveelheid, VerkoperID(FK))
+
+#3NF
+Verkoper(VerkoperID(PK), Verkoper, plaats, Datum)
+Artikel(ArtikelID(PK), Artikel, Prijs, VerkoperID(FK))
+Hoeveelheid(hoeveelheid, VerkoperID(FK), ArtikelID(FK))
