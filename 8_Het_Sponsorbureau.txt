@@ -1,0 +1,13 @@
+#UNF
+DB(Project, Klant, Adres, VereistBedrag, [Sponsornaam, SponsorAdres, SponsorBedrag, SponsorDatum], [Evenement, EvenementDatum, EvenementInkomsten, EvenementUitgave])
+
+#1NF 
+Project(ProjectID(PK), klant, Adres, VereistBedrag)
+Sponsors(SponsorID(PK), SponsorNaam, SponsorAdres, SponsorBedrag, SponsorDatum, projectID(FK))
+Evenement(EvenementID(PK), Evenement, EvenementDatum, EvenementInkomsten, EvenementUitgave, projectID(FK))
+
+#2NF 
+2NF = 1NF
+
+#3NF 
+3NF = 2NF
