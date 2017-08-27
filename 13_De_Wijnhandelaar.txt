@@ -1,0 +1,17 @@
+#UNF 
+DB([Wijnhuis, WijnhuisAdres, WijnhuisTel, WijnhuisFax], Wijngebied, [Wijnsoort, Type, Jaar, Inkoopprijs, Verkoopprijs, Voorraad])
+
+#1NF
+Wijnhuis(WijnhuisID(PK), Wijnhuis, WijnhuisAdres, WijnhuisTel, WijnhuisFax, Wijngebied, WijnID(FK))
+Wijn(WijnID(PK), Wijnsoort, Type, Jaar, Inkoopprijs, Verkoopprijs, Voorraad)
+
+#2NF
+Wijnhuis(WijnhuisID(PK), Wijnhuis, WijnhuisAdres, WijnhuisTel, WijnhuisFax, WijngebiedID(FK), WijnID(FK))
+Wijngebied(WijgebiedID(PK), Wijngebied)
+Wijn(WijnID(PK), Wijnsoort, Type, Jaar, Inkoopprijs, Verkoopprijs, Voorraad)
+
+#3NF 
+Wijnhuis(WijnhuisID(PK), Wijnhuis, WijnhuisAdres, WijnhuisTel, WijnhuisFax, WijngebiedID(FK), WijnID(FK))
+Wijngebied(WijgebiedID(PK), Wijngebied)
+Wijn(WijnID(PK), Wijnsoort, Type, Jaar, Inkoopprijs, Verkoopprijs)
+Vooraad(Vooraad, WijnID(FK))
