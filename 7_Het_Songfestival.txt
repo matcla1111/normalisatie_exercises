@@ -1,0 +1,13 @@
+#UNF 
+DB(Songfestivaljaar, Plaats, Datum, [Land, Artist, Lied, [ScoreLand, ScorePunten]])
+
+#1NF 
+Songfestival(SongfestivalID(PK), Songfestivaljaar, Plaats, Datum)
+Deelnemend(DeelnemendID(PK), Land, Artis, Lied, SongfestivalID(FK))
+Puntegeven(PuntengevendID(PK), ScoreLand, ScorePunten, DeelnemendID(FK), SongfestivalID(FK))
+
+#2NF 
+2NF = 1NF
+
+#3NF 
+3NF = 1NF 
