@@ -1,0 +1,18 @@
+#UNF
+DB(Timesheet, PersID, [Datum, Klant, Project, Omschrijving, Dagdeel, GewerktAan, km, Bedrag/km])
+
+#1NF
+Timesheet(TimesheetID(PK), Timesheet, PersID, infoID(FK))
+Info(InfoID(PK), Datum, Klant, Project, Omschrijving, Dagdeel, GewerktAan, km, Bedrag/km)
+
+#2NF 
+Timesheet(TimesheetID(PK), Timesheet, PersID, infoID(FK))
+Datum(DAtumID(PK), Datum, , Dagdeel, TimesheetID(FK), klantID(FK))
+klant(KlantID, klant Project, Omschrijving, GewerktAan, km, Bedrag/km)
+
+#3NF 
+Timesheet(TimesheetID(PK), Timesheet, PersID, datumID(FK))
+Datum(DatumID(PK), Datum, , Dagdeel, TimesheetID(FK), klantID(FK))
+klant(KlantID(PK), klant)
+Project(ProjectID(PK)Project, Omschrijving, GewerktAan, klantID(FK))
+KM(km, Bedrag/km, klantID(FK))
