@@ -16,3 +16,9 @@ $ git add READme.md
 $ git commit -m "First Commit"
 $ git remote add origin https://github.com/matcla1111/normalisatie_exercises.git #link gegeven door github
 $ git push -u origin master
+
+#Add a new file
+git add repository.txt
+git commit -m "message"
+git status
+git push -u origin master
