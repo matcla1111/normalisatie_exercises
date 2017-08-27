@@ -1,0 +1,18 @@
+#Change your pwd to place you want
+$ cd Documents/Bio\ -\ Informatica/Periode\ B\ \(2\)/BIT05\ Databanktechnologie/
+
+#Make a new directory 
+$ mkdir normalisatie_ex
+
+#Change your pwd to new directory 
+$ cd normalisatie_ex
+
+#Go to github 
+- Make new repository 
+
+$ echo "# normalisatie_exercises" >> README.md
+$ git init
+$ git add READme.md
+$ git commit -m "First Commit"
+$ git remote add origin https://github.com/matcla1111/normalisatie_exercises.git #link gegeven door github
+$ git push -u origin master
