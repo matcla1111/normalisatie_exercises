@@ -1,0 +1,19 @@
+#UNF 
+DB(FactuurNr, FactuurDatum, Klantnr, Naam, Artnr, Omschrijving, Eenheid, Prijs, Aantal, BTWcode, BTW)
+
+#1NF 
+DB(FactuurNr (PK), FactuurDatum, Klantnr (PK), Naam)
+DB1(ArtNr (PK), Omschrijving, Eenheid, Prijs, Aantal, BTWcode, BTW)
+
+#2NF
+DB(FactuurNr(PK), FactuurDatum, klantNr(FK))
+DB1(KlantNr(PK), Naam)
+DB2(ArtNr(PK), Omschrijving, Eenheid, Prijs, Aantal, BTWcode(FK), FactuurNr(FK))
+DB3(BTWcode(PK), BTW)
+
+3NF
+DB(FactuurNr(PK), FactuurDatum, klantNr(FK))
+DB1(Klantnr(PK), Naam)
+DB2(Artnr(PK), Omschrijving, Eenheid, Prijs, BTWcode(FK))
+DB3(BTWcode(PK), BTW)
+DB4(FactuurNr(FK), Klantnr(FK), Aantal)
