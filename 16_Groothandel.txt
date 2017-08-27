@@ -1,0 +1,17 @@
+#UNF 
+DB(Magazijn, [ArtNr, Omschrijving, LevNr, LevNaam, Prijs, Aantal])
+
+#1NF
+Magazijn(MagazijnID(PK), Magazijn, ArtNr(FK))
+Artikel(Artnr(PK), Omschrijving, LevNr, LevNaam, Prijs, Aantal)
+
+#2NF
+Magazijn(MagazijnID(PK), Magazijn, ArtNr(FK), LevNr(FK))
+Artikel(Artnr(PK), Omschrijving, Prijs, Aantal, LevNr(FK))
+Levering(LevNr(PK), LevNaam)
+
+#3NF 
+Magazijn(MagazijnID(PK), Magazijn, ArtNr(FK), LevNr(FK))
+Artikel(Artnr(PK), Omschrijving, Prijs, Aantal, LevNr(FK))
+Levering(LevNr(PK), LevNaam)
+Aantal(Aantal, MagazijnID(FK), ArtikelNr(FK), LeverNr(FK))
