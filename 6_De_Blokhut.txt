@@ -1,0 +1,16 @@
+#UNF
+DB(BlokhutNaam, [HuurderNaam, HuurderVoornaam, HuurderGeboortedatum, Leider], [ActiviteitDatum, ActiviteitOmschrijving, ActiviteitPrijs, ActiviteitScore])
+
+#1NF 
+Blokhut(BlokhutID(PK), Blokhutnaam)
+Huurder(HuurderID(PK), HuurderNaam, HuurderVoornaam, HuurderGeboortedatum, Leider, BlokhutID(FK))
+Activiteit(ActiviteitID(PK), ActiviteitDatum, ActiviteitOmschrijving, ActiviteitPrijs, ActiviteitScore, BlokhutID(FK))
+
+#2NF
+2NF  = 1NF 
+
+#3NF 
+Blokhut(BlokhutID(PK), Blokhutnaam)
+Huurder(HuurderID(PK), HuurderNaam, HuurderVoornaam, HuurderGeboortedatum, Leider, BlokhutID(FK))
+Leider(Leider, BlokhutID(FK), HuurderID(FK))
+Activiteit(ActiviteitID(PK), ActiviteitDatum, ActiviteitOmschrijving, ActiviteitPrijs, ActiviteitScore, BlokhutID(FK))
