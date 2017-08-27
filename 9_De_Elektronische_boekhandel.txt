@@ -1,0 +1,17 @@
+#UNF 
+DB(Caddy, Datum, Klant, CreditCard, [ISBN, Titel, Auteurs, Aantal, Prijs], verzendkosten)
+
+#1NF 
+Caddy(Caddy(PK), Datum, Klant, CreditCard, verzendkosten)
+Boek(ISBN(PK), Titel, Auteurs, Aantal, Prijs, Caddy(FK))
+
+#2NF
+Caddy(Caddy(PK), Datum, KlantID, verzendkosten, klantID(FK))
+Klant(KlantID(PK), klant, CreditCard)
+Boek(ISBN(PK), Titel, Auteurs, Aantal, Prijs, Caddy(FK))
+
+#3NF 
+Caddy(Caddy(PK), Datum, KlantID, verzendkosten, klantID(FK))
+Klant(KlantID(PK), klant, CreditCard)
+Boek(ISBN(PK), Titel, Auteurs, Prijs, Caddy(FK))
+Aantal(Aantal, ISBN(FK), Caddy(FK))
