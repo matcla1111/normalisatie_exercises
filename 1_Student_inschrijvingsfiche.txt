@@ -1,0 +1,16 @@
+#http://teachweb.milin.cc/databanken/oefeningen/oefeningen_normalisatie.htm
+
+#UNF 
+DB(StudNr, StudNaam, StudAdres, StudWoonplaats, [CursusCode, CursusNaam, StartDatum, Gebouw, locatie])
+
+#1NF
+Student(StudNr(PK), StudNaam, StudAdres, StudWoonplaats)
+Cursus(CursusCode(PK), CursusNaam, StartDatum, Gebouw, locatie, StudNr(FK))
+
+#2NF
+2NF = 1NF
+
+#3NF 
+Student(StudNr(PK), StudNaam, StudAdres, StudWoonplaats)
+Cursus(CursusCode(PK), CursusNaam, StartDatum, StudNr(FK), Gebouw(FK))
+Gebouw(Gebouw(PK), locatie)
