@@ -1,0 +1,17 @@
+#UNF
+DB(ProjectCode, ProjectTitle, ProjectManager, Projectbudget, staffOnProject, [EmployeeNo, EmployeeName, DepartmentNo, Department, Rate])
+
+#1NF
+Project(ProjectCode(PK), ProjectTitle, ProjectManager, Projectbudget, staffOnProject, Employee+DepartmentID(FK))
+Empl_Dep(Employee+DepartmentID(PK), EmployeeNo, EmployeeName, DepartmentNo, Department, Rate)
+
+#2NF
+Project(ProjectCode(PK), ProjectTitle, ProjectManager, Projectbudget, staffOnProject, EmployeeID(FK),DepartmentID(FK))
+Employee(EmployeeID(PK), EmployeeNo, EmployeeName, DepartmentID(FK))
+Department(DepartmentID(PK), DepartmentNo, Department, Rate)
+
+#3NF
+Project(ProjectCode(PK), ProjectTitle, ProjectManager, Projectbudget, EmployeeID(FK),DepartmentID(FK))
+Employee(EmployeeID(PK), EmployeeNo, EmployeeName, DepartmentID(FK))
+Department(DepartmentID(PK), DepartmentNo, Department, Rate)
+AmoutntOfStaff(StaffOnProject, EmployeeID(FK), ProjectID(FK))
