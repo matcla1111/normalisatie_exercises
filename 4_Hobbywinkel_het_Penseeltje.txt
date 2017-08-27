@@ -1,0 +1,17 @@
+#UNF 
+DB(BestelNr, BestelDatum, KlantNr, KlantNaam, KlantStraat, KlantPostcode, KlantGemeente, KlantTelNr, [ArtikelNr, Omschrijving, Aantal, Prijs, Korting], Voorschot, Verkoper)
+
+#1NF 
+Bestelbon(BestelNr(PK), BestelDatum, KlantNr, KlantNaam, KlantStraat, KlantPostcode, KlantGemeente, KlantTelNr, Voorschot, Verkoper)
+Artikel(ArtikelNr(PK), Omschrijving, Aantal, Prijs, Korting, BestelNr(FK))
+
+#2NF
+Bestelbon(BestelNr(PK), BestelDatum, Voorschot, Verkoper, KlantNr(FK))
+Klant(KlantNr(PK), KlantNaam, KlantStraat, KlantPostcode, KlantGemeente, KlantTelNr)
+Artikel(ArtikelNr(PK), Omschrijving, Aantal, Prijs, Korting, BestelNr(FK))
+
+#3NF 
+Bestelbon(BestelNr(PK), BestelDatum, Voorschot, Verkoper, KlantNr(FK))
+Klant(KlantNr(PK), KlantNaam, KlantStraat, KlantPostcode, KlantGemeente, KlantTelNr)
+Artikel(ArtikelNr(PK), Omschrijving, Prijs, Korting, BestelNr(FK))
+Aantal(Aantal, BestelbonNr(FK), ArtikelNr(FK))
