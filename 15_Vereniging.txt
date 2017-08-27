@@ -1,0 +1,12 @@
+#UNF
+DB(CommisieAfkorting, CommisieNaam, [Lidnummer, Naam, Adres, Woonplaats, Telefoon, Geboortedatum])
+
+#1NF
+Commisie(CommisieID(PK), CommisieAfkorting, CommisieNaam, Lidnummer(FK))
+Lid(Lidnummer(PK), Naam, Adres, Woonplaats, Telefoon, Geboortedatum)
+
+#2NF
+2NF = 1NF
+
+#3NF 
+3NF = 2NF = 1NF
