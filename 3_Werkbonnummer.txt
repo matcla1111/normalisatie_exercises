@@ -1,0 +1,17 @@
+#UNF 
+DB(WerkbonNr, Datum, KlantNr, KlantAdres, KlantPlaats, KlantTelnr, Omschrijving, AantalUren, [ArtikelNr, ArtikelAantal, ArtikelOmschrijving], TechniekerNaam)
+
+#1NF 
+Werkbon(WerkbonNr(PK), Datum, KlantNr, KlantAdres, KlantPlaats, KlantTelnr, Omschrijving, AantalUren, TechniekerNaam)
+Artikel(ArtikelNr(PK), ArtikelAantal, ArtikelOmschrijving, WerkbonNr(FK))
+
+#2NF 
+Werkbon(WerkbonNr(PK), Datum, Omschrijving, AantalUren, TechniekerNaam, KlantNr(FK))
+Klant(KlantNr(PK), KlantAdres, KlantPlaats, KlantTelnr)
+Artikel(ArtikelNr(PK), ArtikelAantal, ArtikelOmschrijving, WerkbonNr(FK))
+
+#3NF
+Werkbon(WerkbonNr(PK), Datum, Omschrijving, AantalUren, TechniekerNaam, KlantNr(FK))
+Klant(KlantNr(PK), KlantAdres, KlantPlaats, KlantTelnr)
+Artikel(ArtikelNr(PK), ArtikelOmschrijving, WerkbonNr(FK))
+Artikel2(Aantal, WerkbonNr(FK), ArtikelNr(FK)) #Want aantal is onafhankelijk van het artikelsoort
