@@ -1,0 +1,17 @@
+#UNF
+DB(Campus, CampusAdres, [StudentID, Student, Titel, Comissie, Datum, Uur, Lokaal, Score])
+
+#1NF
+Campus(CampusID(PK), Campus, CampusAdres, InfoID(FK))
+InfoID(InfoID(PK), StudentID, Student, Titel, Commisie, Datum, Uur, Lokaal, Score)
+
+#2NF
+Campus(CampusID(PK), Campus, CampusAdres, InfoID(FK), StudentID(FK))
+Student(StudentID(PK), Student, Titel, Commisie, Score)
+Info(InfoID(PK), Datum, Uur, Lokaal)
+
+3NF
+Campus(CampusID(PK), Campus, CampusAdres, InfoID(FK), StudentID(FK))
+Student(StudentID(PK), Student, Titel, Score, CommisieID(FK))
+Commisie(CommisieID(PK), Commisiemensen, InfoID(FK))
+Info(InfoID(PK), Datum, Uur, Lokaal)
