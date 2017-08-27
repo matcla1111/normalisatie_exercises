@@ -1,0 +1,16 @@
+#UNF 
+DB(FilmID, Titel, Productiehuis, ReleaseDate, KorteInhoud, [Acteur, Personage], [Description, CrewName])
+
+#1NF 
+Film(FilmID(PK), Titel, Productiehuis, ReleaseDate, KorteInhoud, ActeurID(FK), CrewID(FK))
+Acteur(ActeurID(PK), Acteur, Personage, FilmID(FK))
+Crew(CrewID(PK), Description, CrewName, FilmID(FK))
+
+#2NF
+2NF = 1NF
+
+#3NF 
+Film(FilmID(PK), Titel, Productiehuis, ReleaseDate, KorteInhoud, ActeurID(FK), CrewID(FK))
+Acteur(ActeurID(PK), Acteur)
+MainCast(MaincastID(PK), Personage, ActeurID(FK), FilmID(FK))
+Crew(CrewID(PK), Description, CrewName, FilmID(FK))
